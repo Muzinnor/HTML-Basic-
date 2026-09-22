@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Pseudo-classes Part 1</title>
+  <style>
+    .link-demo:visited{
+        color: yellowgreen;
+    }
+    .link-demo:link{
+        color: red;
+    }
+    .btn{
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 7px;
+        color: black;
+        margin-bottom:20 ;
+        background-color: white;
+    }
+    .btn:hover{
+        color: white;
+        background-color: olivedrab;
+    }
+    .btn:active{
+        color: yellowgreen;
+        background-color: white;
+        transform: scale(0.95);
+    }
+    .btn2{
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 7px;
+        color: black;
+        text-decoration: none;
+        background-color: white;
+    }
+    .btn2:hover{
+        background-color: yellowgreen;
+        color: white;
+    }
+    .btn2:active{
+        color: white;
+        background-color: rgb(123, 149, 70);
+    }
+    input:focus{
+        border: 1px solid greenyellow;
+        outline: none;
+    }
+    .target-box{
+        margin: 20px;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .target-box:target{
+        background-color: yellowgreen;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    input:disabled{
+        cursor: no-drop;
+    }
+    input[type="checkbox"]:checked+label{
+        text-decoration: line-through;
+        text-decoration-thickness:0.2;
+        font-weight: bold;
+        color: red;
+    }
+    .input-email{
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .input-email:invalid{
+        background-color: rgb(242, 131, 131);
+        border: 1px solid rgb(255, 216, 216);
+    }
+    .input-email:valid{
+        background-color: rgb(171, 222, 95);
+        border: rgb(233, 255, 201);
+    }
+    ul{
+        list-style: none;
+    }
+    li{
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid black;
+    }
+    li:nth-child(even){
+        background-color: yellowgreen;
+        color: white;
+    }
+    li:nth-child(odd){
+        background-color: olivedrab;
+        color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Playground Pseudo-classes</h1>
+
+  <h2>1. Historic States (:link, :visited)</h2>
+  <a href="https://google.com" class="link-demo" target="_blank">Google (Mungkin Visited)</a> |
+  <a href="https://website-asal-asalan-123.com" class="link-demo" target="_blank">Link Asal (Pasti Link)</a>
+
+  <h2>2. Interactive States (:hover, :active, :focus, :target)</h2>
+
+  <button class="btn">Hover & Click Me!</button>
+  <br><br>
+
+  <input type="text" placeholder="Klik saya (Focus)">
+  <br><br>
+
+  <p>Navigasi Target:</p>
+  <a href="#kotak1" class="btn2">Buka Kotak 1</a>
+  <a href="#kotak2" class="btn2">Buka Kotak 2</a>
+
+  <div id="kotak1" class="target-box">
+    Ini KOTAK 1 (Klik tombol di atas agar saya jadi :target)
+  </div>
+  <div id="kotak2" class="target-box">
+    Ini KOTAK 2 (Klik tombol di atas agar saya jadi :target)
+  </div>
+
+
+  <h2>3. Form States (:disabled, :checked)</h2>
+
+  <input type="text" disabled placeholder="Saya Disabled">
+  <input type="text" placeholder="Saya Enabled">
+  <br><br>
+
+  <input type="checkbox" id="tugas1">
+  <label for="tugas1">Belajar HTML</label>
+  <br>
+  <input type="checkbox" id="tugas2" checked>
+  <label for="tugas2">Belajar CSS (Checked)</label>
+
+
+  <h2>4. Validation States (:valid, :invalid)</h2>
+  <p>Coba ketik email yang salah (tanpa @), lalu ketik email yang benar.</p>
+  <form>
+    <input type="email" class="input-email" placeholder="Masukkan email...">
+  </form>
+
+
+  <h2>5. Index & Occurrence (:nth-child dll)</h2>
+
+  <ul>
+    <li>Item 1 (First Child - Hitam)</li>
+    <li>Item 2 (Genap - Merah)</li>
+    <li>Item 3 (Ke-3 - Garis Bawah)</li>
+    <li>Item 4 (Genap - Merah)</li>
+    <li>Item 5 (Biasa)</li>
+    <li>Item 6 (Last Child - Abu)</li>
+  </ul>
+
+  <h3>Empty State (:empty)</h3>
+  <p>Kotak pink di bawah ini muncul karena elemennya KOSONG.</p>
+  <div class="kotak-kosong"></div>
+
+</body>
+
+</html>

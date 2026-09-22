@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Pseudo-elements Part 1</title>
+  <style>
+    .link-download{
+        text-decoration: none;
+        color: olivedrab;
+    }
+    .link-download::before{
+        content: "📥 ";
+    }
+    .materi-baru::after{
+        content: " [New]";
+        color: red;
+        font-size: 9px;
+    }
+    .kutipan-keren{
+        width: 700px;
+        background-color: rgb(245, 245, 245);
+        padding: 17px;
+        color: rgb(68, 68, 68);
+        font-family: Arial, Helvetica, sans-serif;
+        border-left: 7px solid olivedrab;
+        border-top: 7px solid olive;
+    }
+    .kutipan-keren::after{
+        content: " ❞";
+        color: olivedrab;
+    }
+    .kutipan-keren::before{
+        content: "❝ ";
+        color: olivedrab;
+    }
+    .artikel-wpu{
+        width: 600px;
+        line-height: 1.6;
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+        word-spacing: 10px;
+        border-radius: 9px;
+        border-left: 8px solid olivedrab;
+        background-color: rgba(244, 244, 244, 0.55);
+        padding: 20px;
+    }
+    .artikel-wpu::first-letter{
+        font-size: 45px;
+        font-weight: bold;
+        color: olivedrab;
+    }
+    .artikel-wpu::first-line{
+        letter-spacing: 5px;
+        font-weight: bold;
+    }
+    .artikel-wpu::selection{
+        background-color: olive;
+        color: white;
+    }
+    input[type="text"]{
+        padding: 10px;
+        width: 20%;
+        border: 1px solid olive;
+        outline: none;
+    }
+    input[type="text"]::placeholder{
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Playground Pseudo-elements</h1>
+
+  <h2>1. Konten Tambahan (::before, ::after)</h2>
+
+  <a href="#" class="link-download">Download Source Code</a>
+  <br><br>
+
+  <ul>
+    <li>HTML Dasar</li>
+    <li>CSS Layouting <span class="materi-baru"></span></li>
+    <li>JavaScript DOM</li>
+  </ul>
+
+  <div class="kutipan-keren">
+    Ngoding itu mudah, yang susah itu cari bug-nya kalau lupa titik koma.
+  </div>
+
+
+  <h2>2. Tipografi dan Teks (::first-letter, ::first-line, ::selection)</h2>
+
+  <p class="artikel-wpu">
+    Halo Pasukan Titik Koma! Selamat datang di seri tutorial WPU. Pada bagian ini, kita akan belajar bagaimana
+    memanipulasi tampilan teks menggunakan pseudo-elements tanpa perlu menambah tag span di HTML. Coba kecilkan jendela
+    browser Anda dan lihat bagaimana baris pertama secara otomatis menyesuaikan efek tebalnya. Jangan lupa, coba blok
+    (sorot) paragraf ini untuk melihat efek dari pseudo-element selection.
+  </p>
+
+
+  <h2>3. Formulir (::placeholder)</h2>
+
+  <p>Coba klik input di bawah ini, perhatikan gaya teks placeholder-nya dan bagaimana ia menghilang saat kursor aktif.
+  </p>
+  <form>
+    <input type="text" class="input-pencarian" placeholder="Cari video tutorial WPU di sini...">
+  </form>
+
+</body>
+
+</html>
